@@ -12,7 +12,7 @@ public class LibrarianDashboard extends JFrame implements ActionListener {
         this.librarianName = librarianName;
         initializeUI();
     }
-
+    
     private void initializeUI() {
         setTitle("Librarian Dashboard - " + librarianName);
         setSize(500, 400);
@@ -39,6 +39,11 @@ public class LibrarianDashboard extends JFrame implements ActionListener {
         logoutButton.setBounds(150, 220, 200, 40);
         logoutButton.addActionListener(this);
         add(logoutButton);
+
+        JButton addMemberBtn = new JButton("Add Member");
+        addMemberBtn.setBounds(30, 200, 150, 30); // adjust to fit your layout
+        addMemberBtn.addActionListener(e -> new AddMemberDialog(this));
+        add(addMemberBtn);
 
         getContentPane().setBackground(new Color(240, 255, 245));
         setVisible(true);
